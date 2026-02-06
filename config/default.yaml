@@ -1,0 +1,58 @@
+# 时间参数 (单位: ms)
+time:
+  dw_interval: 512          # Discovery Window间隔
+  dw_duration: 16           # Discovery Window持续时间
+  beacon_interval: 100      # Beacon发送间隔
+  tsf_resolution: 0.001     # TSF时间精度(1us)
+
+# 信道参数
+channel:
+  social_channel: [6, 149]  # NAN社交信道
+  data_channel: [36, 40, 44, 48]  # 数据信道
+  path_loss_exponent: 3.5   # 路径损耗指数
+  reference_distance: 1.0   # 参考距离(m)
+  reference_loss: 40.0      # 参考损耗(dB)
+
+# 节点参数
+node:
+  count: 20                 # 节点数量
+  area_size: [100, 100]     # 仿真区域(m x m)
+  tx_power: 20              # 发射功率(dBm)
+  rx_sensitivity: -85       # 接收灵敏度(dBm)
+  clock_drift_max: 50       # 最大时钟漂移(ppm)
+
+# MAC参数
+mac:
+  sifs: 16                  # SIFS(us)
+  difs: 34                  # DIFS(us)
+  slot_time: 9              # Slot time(us)
+  cw_min: 15                # 最小竞争窗口
+  cw_max: 1023              # 最大竞争窗口
+
+# 功耗参数 (mW)
+power:
+  tx: 800                   # 发射功耗
+  rx: 300                   # 接收功耗
+  listen: 200               # 监听功耗
+  sleep: 1                  # 休眠功耗
+
+# 流量参数
+traffic:
+  publish_rate: 0.1         # Publish频率(1/s)
+  subscribe_rate: 0.05      # Subscribe频率(1/s)
+  service_count: 10         # 服务池大小
+  payload_size: 256         # Service Info大小(bytes)
+
+# 移动性参数
+mobility:
+  enabled: true
+  model: "random_walk"
+  speed_min: 0.5            # 最小速度(m/s)
+  speed_max: 2.0            # 最大速度(m/s)
+  pause_time: 5.0           # 暂停时间(s)
+
+# 仿真控制
+simulation:
+  duration: 60000           # 仿真时长(ms)
+  seed: 42                  # 随机种子
+  output_dir: "output"
